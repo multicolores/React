@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -21,6 +21,9 @@ function Nav() {
         </Link>
         <Link to="/meteo" style={navStyle}>
           <li>Météo</li>
+        </Link>
+        <Link to="/image_anim" style={navStyle}>
+          <li>Anim gsap</li>
         </Link>
       </ul>
     </nav>

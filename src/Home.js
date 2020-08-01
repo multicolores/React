@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 
 function Home() {
   return <h1>Home page</h1>;
