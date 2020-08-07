@@ -1,6 +1,29 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    x: "-100%",
+    scale: 0.8,
+  },
+  in: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+  },
+  out: {
+    opacity: 0,
+    x: "100%",
+    scale: 1.2,
+  },
+};
+const pageTransition = {
+  duration: 1,
+  ease: "anticipate",
+};
 
 function About() {
   useEffect(() => {
@@ -16,7 +39,15 @@ function About() {
     setItems(items);
   };
   return (
-    <div className="div_about">
+    <motion.div
+      className="div_about"
+      style={{ position: "absolute", width: "100%", textAlign: "center" }}
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
       {items.map((item) => (
         <div>
           <h1 key={item.id}>
@@ -25,7 +56,7 @@ function About() {
           <p>{item.description}</p>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
