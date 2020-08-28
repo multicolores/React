@@ -8,6 +8,7 @@ import FilmDetail from "./filmDetail";
 import Nasa from "./nasa";
 import Meteo from "./meteo";
 import Image_anim from "./image_transition_gsap";
+import TodoApp from "./todoApp";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/meteo" exact component={Meteo} />
                 <Route path="/about/:id" component={FilmDetail} />
                 <Route path="/image_anim" exact component={Image_anim} />
+                <Route path="/todoApp" exact component={TodoApp} />
               </Switch>
             </AnimatePresence>
           )}

@@ -25,6 +25,9 @@ function Nav() {
         <Link to="/image_anim" style={navStyle}>
           <li>Anim gsap</li>
         </Link>
+        <Link to="/todoApp" style={navStyle}>
+          <li>Todo App</li>
+        </Link>
       </ul>
     </nav>
   );
