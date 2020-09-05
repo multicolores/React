@@ -38,6 +38,26 @@ function About() {
     console.log(items);
     setItems(items);
   };
+
+  // pour le scroll top
+  const [shouldShowAction, setSouldShowAction] = React.useState(false);
+  const [lastYpos, setLastYPos] = React.useState(0);
+
+  React.useEffect(() => {
+    function handleScroll() {
+      const yPos = window.scrollY;
+      const isScrollingUp = yPos < lastYpos;
+
+      setSouldShowAction(isScrollingUp);
+      setLastYPos(yPos);
+    }
+    window.addEventListener("scroll", handleScroll, false);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll, false);
+    };
+  }, [lastYpos]);
+
   return (
     <motion.div
       className="div_about"
@@ -56,6 +76,15 @@ function About() {
           <p>{item.description}</p>
         </div>
       ))}
+
+      <motion.a
+        href="#top"
+        className="scroll_top"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: shouldShowAction ? 1 : 0 }}
+      >
+        top
+      </motion.a>
     </motion.div>
   );
 }

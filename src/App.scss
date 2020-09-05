@@ -1,3 +1,9 @@
+body {
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -40,7 +46,6 @@ nav {
   .image_container {
     width: 817px;
     height: 545px;
-    background-color: blue;
     position: absolute;
     overflow: hidden;
 
@@ -66,4 +71,39 @@ nav {
     background-color: white;
     z-index: 9;
   }
+}
+
+/* page transi avec image  */
+.frame {
+  overflow: hidden;
+  position: absolute;
+  margin-top: "5%";
+  margin-left: "40%";
+  transform: translateY(-50%);
+}
+.container_image_pagetransi {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.h1 {
+  position: absolute;
+}
+.pourscroll {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 100vh;
+}
+span {
+  font-size: 2em;
+}
+.scroll_top {
+  position: fixed;
+  right: 5%;
+  top: 5%;
+  color: red;
 }
